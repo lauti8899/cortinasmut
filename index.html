@@ -90,6 +90,12 @@
       margin-top: 10px;
       display: inline-block;
     }
+    .precio {
+      font-size: 18px;
+      color: #333;
+      font-weight: bold;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -139,6 +145,7 @@
       <h2 id="modalTitulo"></h2>
       <img id="modalImagen" src="" alt="">
       <p id="modalDescripcion"></p>
+      <p id="modalPrecio" class="precio"></p>
       <a class="contactar-btn" href="https://wa.me/5491171829131" target="_blank">Contactate</a>
     </div>
   </div>
@@ -148,27 +155,32 @@
       {
         titulo: "Cortina Moderna",
         descripcion: "Una cortina moderna y liviana, perfecta para ambientes luminosos.",
-        imagen: "https://i.imgur.com/l9PS2R4.jpeg"
+        imagen: "https://i.imgur.com/l9PS2R4.jpeg",
+        precio: "$1000"
       },
       {
         titulo: "Cortina Blackout",
         descripcion: "Cortina 100% blackout que impide el paso de la luz. Ideal para dormitorios.",
-        imagen: "https://i.imgur.com/lMQa2FG.jpeg"
+        imagen: "https://i.imgur.com/lMQa2FG.jpeg",
+        precio: "$1200"
       },
       {
         titulo: "Cortina Rústica",
         descripcion: "Diseño natural y texturado, con tela tipo lino.",
-        imagen: "https://i.imgur.com/FVxfaMP.jpeg"
+        imagen: "https://i.imgur.com/FVxfaMP.jpeg",
+        precio: "$900"
       },
       {
         titulo: "Cortina de Lujo",
         descripcion: "Cortina elegante con detalles dorados y bordes premium.",
-        imagen: "https://i.imgur.com/zGUXVnA.jpeg"
+        imagen: "https://i.imgur.com/zGUXVnA.jpeg",
+        precio: "$1500"
       },
       {
         titulo: "Cortina Infantil",
         descripcion: "Colores alegres y estampados para chicos.",
-        imagen: "https://i.imgur.com/PCThMOp.jpeg"
+        imagen: "https://i.imgur.com/PCThMOp.jpeg",
+        precio: "$800"
       }
     ];
 
@@ -177,6 +189,7 @@
       document.getElementById("modalTitulo").textContent = producto.titulo;
       document.getElementById("modalDescripcion").textContent = producto.descripcion;
       document.getElementById("modalImagen").src = producto.imagen;
+      document.getElementById("modalPrecio").textContent = producto.precio;
       document.getElementById("modal").style.display = "flex";
     }
 
