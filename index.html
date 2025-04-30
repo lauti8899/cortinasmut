@@ -2,260 +2,216 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cortinas Mut</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Cortinas</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
-      background: #f4f4f4;
+      padding: 0;
     }
-    header {
-      background: #333;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
+
+    h1 {
+      text-align: center;
+      padding: 20px;
     }
-    header h1 {
-      margin: 0;
-    }
-    .whatsapp-button {
-      background: green;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .whatsapp-button i {
-      margin-right: 5px;
-    }
+
     .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
       padding: 20px;
     }
+
     .producto {
-      background: white;
+      background-color: white;
+      padding: 10px;
       border-radius: 10px;
-      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 200px;
       text-align: center;
       cursor: pointer;
       transition: transform 0.2s;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+
     .producto:hover {
       transform: scale(1.05);
     }
+
     .producto img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       border-radius: 10px;
     }
+
     .modal {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
     }
+
     .modal-content {
-      background: white;
+      background-color: white;
+      margin: 10% auto;
       padding: 20px;
       border-radius: 10px;
-      max-width: 500px;
+      width: 300px;
       text-align: center;
     }
-    .modal-content img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
+
     .close {
       float: right;
-      font-size: 22px;
+      font-size: 28px;
+      font-weight: bold;
       cursor: pointer;
     }
-    .contactar-btn {
-      background: green;
-      color: white;
-      padding: 10px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
-      display: inline-block;
+
+    .close:hover {
+      color: red;
     }
-    .precio {
-      font-size: 18px;
-      color: #187700;
-      font-weight: bold;
-      margin-top: 10px;
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Cortinas Mut</h1>
-    <a class="whatsapp-button" href="https://wa.me/5491120303639" target="_blank">
-      <i class="fab fa-whatsapp"></i> Contáctanos
-    </a>
-  </header>
+<h1>Nuestras Cortinas</h1>
 
-  <section class="productos">
-    <div class="producto" onclick="mostrarModal(0)">
-      <img src="https://i.imgur.com/l9PS2R4.jpeg" alt="Cortina 1">
-      <h3>Cortina Moderna</h3>
-      <p>Ideal para living.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(1)">
-      <img src="https://i.imgur.com/lMQa2FG.jpeg" alt="Cortina 2">
-      <h3>Cortina Blackout</h3>
-      <p>Oscurece totalmente.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(2)">
-      <img src="https://i.imgur.com/FVxfaMP.jpeg" alt="Cortina 3">
-      <h3>Cortina Rústica</h3>
-      <p>Tela tipo lino.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(3)">
-      <img src="https://i.imgur.com/zGUXVnA.jpeg" alt="Cortina 4">
-      <h3>Cortina de Lujo</h3>
-      <p>Con detalles dorados.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(4)">
-      <img src="https://i.imgur.com/PCThMOp.jpeg" alt="Cortina 5">
-      <h3>Cortina Infantil</h3>
-      <p>Colores vivos para chicos.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(5)">
-      <img src="https://i.imgur.com/nAVxJkW.jpeg" alt="Cortina 6">
-      <h3>Cortina de Aluminio extruido</h3>
-      <p>Cortina de Aluminio extruido.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(6)">
-      <img src="https://i.imgur.com/gdOf80y.jpeg" alt="Cortina 7">
-      <h3>Cortina Elegante</h3>
-      <p>Diseño sobrio y moderno.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(7)">
-      <img src="https://i.imgur.com/aLytoKy.jpeg" alt="Cortina 8">
-      <h3>Cortina Clásica</h3>
-      <p>Ideal para ambientes formales.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(8)">
-      <img src="https://i.imgur.com/4NqBLag.jpeg" alt="Cortina 9">
-      <h3>Cortina Beige</h3>
-      <p>Color neutro para combinar con todo.</p>
-    </div>
-
-    <div class="producto" onclick="mostrarModal(9)">
-      <img src="https://i.imgur.com/1TlIWOn.jpeg" alt="Cortina 10">
-      <h3>Cortina Texturada</h3>
-      <p>Textura visible, estilo natural.</p>
-    </div>
-  </section>
-
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <span class="close" onclick="cerrarModal()">&times;</span>
-      <h2 id="modalTitulo"></h2>
-      <img id="modalImagen" src="" alt="">
-      <p id="modalDescripcion"></p>
-      <p id="modalPrecio" class="precio"></p>
-      <a class="contactar-btn" href="https://wa.me/5491120303639" target="_blank">Contactate</a>
-    </div>
+<section class="productos">
+  <div class="producto" onclick="mostrarModal(0)">
+    <img src="https://i.imgur.com/l9PS2R4.jpeg" alt="Cortina Moderna">
+    <h3>Cortina Moderna</h3>
+    <p>Ideal para living.</p>
   </div>
 
-  <script>
-    const productos = [
-      {
-        titulo: "Cortina Moderna",
-        descripcion: "Una cortina moderna y liviana, perfecta para ambientes luminosos.",
-        imagen: "https://i.imgur.com/l9PS2R4.jpeg",
-        precio: "$1000"
-      },
-      {
-        titulo: "Cortina Blackout",
-        descripcion: "Cortina 100% blackout que impide el paso de la luz. Ideal para dormitorios.",
-        imagen: "https://i.imgur.com/lMQa2FG.jpeg",
-        precio: "$1200"
-      },
-      {
-        titulo: "Cortina Rústica",
-        descripcion: "Diseño natural y texturado, con tela tipo lino.",
-        imagen: "https://i.imgur.com/FVxfaMP.jpeg",
-        precio: "$900"
-      },
-      {
-        titulo: "Cortina de Lujo",
-        descripcion: "Cortina elegante con detalles dorados y bordes premium.",
-        imagen: "https://i.imgur.com/zGUXVnA.jpeg",
-        precio: "$1500"
-      },
-      {
-        titulo: "Cortina Infantil",
-        descripcion: "Colores alegres y estampados para chicos.",
-        imagen: "https://i.imgur.com/PCThMOp.jpeg",
-        precio: "$800"
-      },
-      {
-        titulo: "Cortina de Aluminio extruido",
-        descripcion: "Colores alegres y estampados para chicos.",
-        imagen: "https://i.imgur.com/nAVxJkW.jpeg",
-        precio: "$2000"
-      },
-      {
-        titulo: "Cortina Elegante",
-        descripcion: "Diseño sobrio y moderno que aporta calidez.",
-        imagen: "https://i.imgur.com/gdOf80y.jpeg",
-        precio: "$1100"
-      },
-      {
-        titulo: "Cortina Clásica",
-        descripcion: "Perfecta para ambientes tradicionales o formales.",
-        imagen: "https://i.imgur.com/aLytoKy.jpeg",
-        precio: "$1050"
-      },
-      {
-        titulo: "Cortina Beige",
-        descripcion: "Color neutro ideal para múltiples combinaciones.",
-        imagen: "https://i.imgur.com/4NqBLag.jpeg",
-        precio: "$980"
-      },
-      {
-        titulo: "Cortina Texturada",
-        descripcion: "Tela con textura visible y estilo natural.",
-        imagen: "https://i.imgur.com/1TlIWOn.jpeg",
-        precio: "$1150"
-      }
-    ];
+  <div class="producto" onclick="mostrarModal(1)">
+    <img src="https://i.imgur.com/lMQa2FG.jpeg" alt="Cortina Blackout">
+    <h3>Cortina Blackout</h3>
+    <p>Oscurece totalmente.</p>
+  </div>
 
-    function mostrarModal(index) {
-      const producto = productos[index];
-      document.getElementById("modalTitulo").textContent = producto.titulo;
-      document.getElementById("modalDescripcion").textContent = producto.descripcion;
-      document.getElementById("modalImagen").src = producto.imagen;
-      document.getElementById("modalPrecio").textContent = producto.precio;
-      document.getElementById("modal").style.display = "flex";
-    }
+  <div class="producto" onclick="mostrarModal(2)">
+    <img src="https://i.imgur.com/FVxfaMP.jpeg" alt="Cortina Rústica">
+    <h3>Cortina Rústica</h3>
+    <p>Tela tipo lino.</p>
+  </div>
 
-    function cerrarModal() {
-      document.getElementById("modal").style.display = "none";
+  <div class="producto" onclick="mostrarModal(3)">
+    <img src="https://i.imgur.com/PCThMOp.jpeg" alt="Cortina Infantil">
+    <h3>Cortina Infantil</h3>
+    <p>Colores vivos para chicos.</p>
+  </div>
+
+  <div class="producto" onclick="mostrarModal(4)">
+    <img src="https://i.imgur.com/gdOf80y.jpeg" alt="Cortina Floral">
+    <h3>Cortina Floral</h3>
+    <p>Diseño con flores lilas y fondo blanco.</p>
+  </div>
+
+  <div class="producto" onclick="mostrarModal(5)">
+    <img src="https://i.imgur.com/aLytoKy.jpeg" alt="Cortina Rayada">
+    <h3>Cortina Rayada</h3>
+    <p>Estilo moderno con rayas negras y grises.</p>
+  </div>
+
+  <div class="producto" onclick="mostrarModal(6)">
+    <img src="https://i.imgur.com/4NqBLag.jpeg" alt="Cortina Rosa Pastel">
+    <h3>Cortina Rosa Pastel</h3>
+    <p>Toque suave y delicado.</p>
+  </div>
+
+  <div class="producto" onclick="mostrarModal(7)">
+    <img src="https://i.imgur.com/1TlIWOn.jpeg" alt="Cortina Gris Clásica">
+    <h3>Cortina Gris Clásica</h3>
+    <p>Ideal para salas modernas.</p>
+  </div>
+</section>
+
+<div id="miModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal()">&times;</span>
+    <h2 id="titulo-modal"></h2>
+    <img id="imagen-modal" src="" alt="">
+    <p id="descripcion-modal"></p>
+    <p id="precio-modal" style="font-weight: bold;"></p>
+  </div>
+</div>
+
+<script>
+  const productos = [
+    {
+      titulo: "Cortina Moderna",
+      descripcion: "Una cortina moderna y liviana, perfecta para ambientes luminosos.",
+      imagen: "https://i.imgur.com/l9PS2R4.jpeg",
+      precio: "$1000"
+    },
+    {
+      titulo: "Cortina Blackout",
+      descripcion: "Cortina 100% blackout que impide el paso de la luz. Ideal para dormitorios.",
+      imagen: "https://i.imgur.com/lMQa2FG.jpeg",
+      precio: "$1200"
+    },
+    {
+      titulo: "Cortina Rústica",
+      descripcion: "Diseño natural y texturado, con tela tipo lino.",
+      imagen: "https://i.imgur.com/FVxfaMP.jpeg",
+      precio: "$900"
+    },
+    {
+      titulo: "Cortina Infantil",
+      descripcion: "Colores alegres y estampados para chicos.",
+      imagen: "https://i.imgur.com/PCThMOp.jpeg",
+      precio: "$800"
+    },
+    {
+      titulo: "Cortina Floral",
+      descripcion: "Diseño con flores lilas y fondo blanco.",
+      imagen: "https://i.imgur.com/gdOf80y.jpeg",
+      precio: "$1100"
+    },
+    {
+      titulo: "Cortina Rayada",
+      descripcion: "Estilo moderno con rayas negras y grises.",
+      imagen: "https://i.imgur.com/aLytoKy.jpeg",
+      precio: "$1050"
+    },
+    {
+      titulo: "Cortina Rosa Pastel",
+      descripcion: "Toque suave y delicado para espacios femeninos o infantiles.",
+      imagen: "https://i.imgur.com/4NqBLag.jpeg",
+      precio: "$950"
+    },
+    {
+      titulo: "Cortina Gris Clásica",
+      descripcion: "Diseño elegante y sobrio, ideal para salas modernas.",
+      imagen: "https://i.imgur.com/1TlIWOn.jpeg",
+      precio: "$980"
     }
-  </script>
+  ];
+
+  function mostrarModal(index) {
+    const producto = productos[index];
+    document.getElementById("titulo-modal").textContent = producto.titulo;
+    document.getElementById("imagen-modal").src = producto.imagen;
+    document.getElementById("descripcion-modal").textContent = producto.descripcion;
+    document.getElementById("precio-modal").textContent = producto.precio;
+    document.getElementById("miModal").style.display = "block";
+  }
+
+  function cerrarModal() {
+    document.getElementById("miModal").style.display = "none";
+  }
+</script>
+
 </body>
 </html>
